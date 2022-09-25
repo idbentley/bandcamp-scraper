@@ -59,6 +59,9 @@
     "name": {
       "type": "string"
     },
+    "isLabel": {
+      "type": "string"
+    },
     "location": {
       "type": "string"
     },
