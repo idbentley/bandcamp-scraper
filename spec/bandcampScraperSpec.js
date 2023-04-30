@@ -71,7 +71,8 @@ const trackUrls = [
   'https://dafnez.bandcamp.com/track/serenade',
   'https://xaerarch.bandcamp.com/track/devour-303-absynth-mix',
   'https://backtick.bandcamp.com/track/approx-start-06-51',
-  'https://ripcordz.bandcamp.com/track/the-beta-58s-leave-me-alone'
+  'https://ripcordz.bandcamp.com/track/the-beta-58s-leave-me-alone',
+  'https://nmovenba.bandcamp.com/track/sortie'
 ]
 
 function sample (array) {
@@ -208,6 +209,20 @@ describe('bandcamp-scraper', function () {
           if (trackInfo) console.log(trackInfo)
           expect(error).toBeNull()
           expect(typeof trackInfo).toEqual('object')
+          done()
+        })
+      )
+    })
+  })
+  describe('crawlLocationIds', function () {
+    it('scrape location ids', function (done) {
+      expect(
+        bandcamp.crawlLocationIds(undefined, function (error, locationIds) {
+          if (error) console.log('error', error)
+          if (locationIds) console.log(locationIds)
+          expect(error).toBeNull()
+          expect(typeof locationIds).toEqual('object')
+          expect(Object.keys(locationIds).length).toBeGreaterThan(0)
           done()
         })
       )
