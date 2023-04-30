@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "discovery-result",
+    "description": "yep",
+    "id": "https://mastert.github.io/bandcamp-scraper/schemas/discovery-result.json",
+    "type": "object",
+    "additionalProperties": true,
+    "definitions": {
+        "url_hints": {
+            "properties": {
+                "subdomain": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "item_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "featured_track": {
+            "definitions": {
+                "file": {
+                    "properties": {
+                        "mp3_120": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "properties": {
+                "duration": {
+                    "type": "number"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "type": {
+            "type": "string"
+        },
+        "id": {
+            "type": "integer"
+        },
+        "category": {
+            "type": "string"
+        },
+        "score": {
+            "type": "integer"
+        },
+        "band_id": {
+            "type": "integer"
+        },
+        "item_type_id": {
+            "type": "string"
+        },
+        "publish_date": {
+            "type": "string"
+        },
+        "genre_text": {
+            "type": "string"
+        },
+        "primary_text": {
+            "type": "string"
+        },
+        "secondary_text": {
+            "type": "string"
+        },
+        "art_id": {
+            "type": "integer"
+        },
+        "location_text": {
+            "type": "string"
+        },
+        "lo_querystr": {
+            "type": "string"
+        }
+    },
+    "required": ["url_hints", "featured_track", "type", "id", "category", "score", "band_id", "item_type_id", "publish_date", "genre_text", "primary_text", "secondary_text", "art_id", "location_text"]
+}
